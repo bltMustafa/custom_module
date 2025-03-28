@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="new_prod_feedback_form_view" model="ir.ui.view">
+    <field name="name">new_prod.feedback.form</field>
+    <field name="model">new_prod.feedback</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <h1>
+            <field name="name"/>
+          </h1>
+          <group>
+            <group>
+              <field name="rating"/>
+              <field name="product_id"/>
+            </group>
+            <group>
+              <field name="comment"/>
+              <field name="date"/>
+            </group>
+          </group>
+        </sheet>
+        <chatter/>
+      </form>
+    </field>
+  </record>
+
+  <record id="new_prod_feedback_tree_view" model="ir.ui.view">
+    <field name="name">new_prod.feedback.tree</field>
+    <field name="model">new_prod.feedback</field>
+    <field name="arch" type="xml">
+      <list>
+        <field name="name"/>
+        <field name="rating"/>
+        <field name="product_id"/>
+        <field name="comment"/>
+        <field name="date"/>
+      </list>
+    </field>
+  </record>
+
+
+  <record id="new_prod_feedback_act_window" model="ir.actions.act_window">
+    <field name="name">New Product Feedback</field>
+    <field name="model">new_prod.feedback</field>
+    <field name="view_mode">list,form</field>
+    <field name="domain">[]</field>
+    <field name="context">{}</field>
+    <field name="help" type="html">
+      <p class="oe_view_nocontent_create">
+        There is no product feedback click here to add a new product feedback
+      </p>
+    </field>
+  </record>
+</odoo>
