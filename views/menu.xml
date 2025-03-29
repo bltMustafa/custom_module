@@ -4,7 +4,8 @@
   <menuitem id="menu_new_feedback_root" name="Product Feedback" sequence="5"
             web_icon="prod_feedback,static/description/icon.png">
     <menuitem id="menu_new_prod_feedback_top" name="New Product Feedback" sequence="5">
-      <menuitem id="menu_new_prod_feedback_act" name="Feedback" action="new_prod_request_act_window" sequence="10"/>
+      <menuitem id="menu_new_prod_feedback_act" name="Feedback" action="prod_feedback.new_prod_feedback_act_window"
+                sequence="10"/>
     </menuitem>
   </menuitem>
 
