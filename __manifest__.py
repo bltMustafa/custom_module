@@ -1,5 +1,5 @@
 {
-     'name': 'Product Feedback',
+    'name': 'Product Feedback',
     'category': 'Product Management',
     'summary': 'Product Feedback is ',
     'version': '18.0.1.0.0',
@@ -12,7 +12,7 @@
         'stock',
     ],
     'data': [
-
+        'security/ir.model.access.csv',
         'views/new_prod_feedback.xml',
         'views/menu.xml',
     ],
