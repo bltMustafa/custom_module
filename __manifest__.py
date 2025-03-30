@@ -12,7 +12,9 @@
         'stock',
     ],
     'data': [
+        'data/ir_sequence.xml',
         'security/ir.model.access.csv',
+
         'views/new_prod_feedback.xml',
         'views/menu.xml',
     ],

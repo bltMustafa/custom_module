@@ -6,17 +6,26 @@
     <field name="arch" type="xml">
       <form>
         <sheet>
-          <h1>
-            <field name="name"/>
-          </h1>
+          <div class="oe_title">
+            <label for="name" class="oe_edit_only"/>
+            <h1>
+              <field name="name"/>
+            </h1>
+          </div>
+
           <group>
-            <group>
-              <field name="rating"/>
-              <field name="product_id"/>
-            </group>
-            <group>
-              <field name="comment"/>
+            <group string="General Information" col="2">
+              <field name="product_id" placeholder="Select a product..."/>
               <field name="date"/>
+            </group>
+
+            <group string="Your Feedback" col="2">
+              <field name="rating"/>
+              <field name="comment" placeholder="Write your thoughts about the product..."/>
+            </group>
+
+            <group string="Upload Photo (Optional)">
+              <field name="image" filename="image_filename" widget="image" class="oe_avatar"/>
             </group>
           </group>
         </sheet>
@@ -52,4 +61,25 @@
       </p>
     </field>
   </record>
+
+  <record id="product_template_form_view_inherit_feedback" model="ir.ui.view">
+    <field name="name">product.template.feedback.inherit</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="product.product_template_only_form_view"/>
+    <field name="arch" type="xml">
+      <xpath expr="//notebook" position="inside">
+        <page string="Feedback">
+          <field name="feedback_ids">
+            <list editable="bottom">
+              <field name="name"/>
+              <field name="rating"/>
+              <field name="comment"/>
+              <field name="date"/>
+            </list>
+          </field>
+        </page>
+      </xpath>
+    </field>
+  </record>
+
 </odoo>
